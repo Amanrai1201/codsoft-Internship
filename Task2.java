@@ -31,53 +31,40 @@ class  atminterface extends account{
             check_pin();
         }
     }
-    // money withdrwal
-
     void withdraw_money(){
         System.out.println("Enter the amount to withdraw");
         float  with_amount = sc.nextFloat();
         if((with_amount%100) != 0){
             System.out.println("invalid amount. please enter the amount in multiple of 100");
-            check_pin();
         }
         if (with_amount> balance) {
             System.out.println("insufficient balance");
-            check_pin();
         }
         else{
             balance = balance - with_amount;
             System.out.println("process executes successfully");
-            menu();
         }
     }
-    // depositing money
-
     void deposit_money(){
         System.out.println("Enter the amount to deposit in multiple of 100.");
         float depo_amount = sc.nextFloat();
 
         if((depo_amount%100) != 0){
             System.out.println("invalid amount. please enter the amount in multiple of 100");
-            check_pin();
         }
         else{
             balance = balance + depo_amount;
             System.out.println("Money deposited successfully.");
-            menu();
         }
     }
-    // checking balance
-
      void check_balance(){
         System.out.println("Balance availabel " + balance);
     }
-    //  changing the pin
     void change_pin(){
         System.out.println("Enter new pin of 4 digits");
         int new_pin = sc.nextInt();
         pin = new_pin;
         System.out.println("Pin changed successfully. New pin is :" + new_pin);
-        menu();
     }
 
     void menu(){
